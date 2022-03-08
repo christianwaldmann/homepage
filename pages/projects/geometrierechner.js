@@ -14,18 +14,23 @@ import thumbImage1 from "../../public/images/geometrierechner.png";
 import thumbImage2 from "../../public/images/geometrierechner2.png";
 import thumbImage3 from "../../public/images/geometrierechner3.png";
 
+import { getLanguage } from "../../hooks/getLanguage";
+import { en } from "../../locales/en/geometrierechner";
+import { de } from "../../locales/de/geometrierechner";
+import { enw } from "../../locales/en/words";
+import { dew } from "../../locales/de/words";
+
 export default function Project() {
+	const t = getLanguage() === "en" ? en : de;
+	const w = getLanguage() === "en" ? enw : dew;
+
 	return (
 		<Layout>
-			<Title>Geometrie Rechner</Title>
-			<Paragraph>
-				A website intended for mechanical engineers to easily calculate
-				properties of simple geometries instead of having to do the
-				calculations by hand.
-			</Paragraph>
+			<Title>{t.title}</Title>
+			<Paragraph>{t.description}</Paragraph>
 			<ProjectList>
 				<ProjectListItem>
-					<ProjectBadge>Website</ProjectBadge>
+					<ProjectBadge>{w.website}</ProjectBadge>
 					<a href="https://www.geometrierechner.de/">
 						<StyledLink>
 							https://www.geometrierechner.de/
@@ -33,19 +38,19 @@ export default function Project() {
 					</a>
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Languages</ProjectBadge>
+					<ProjectBadge>{w.languages}</ProjectBadge>
 					HTML, CSS, Javascript
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Frameworks</ProjectBadge>
+					<ProjectBadge>{w.frameworks}</ProjectBadge>
 					React, TailwindCSS
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Tools</ProjectBadge>
+					<ProjectBadge>{w.tools}</ProjectBadge>
 					Git, Github Pages, Travis CI, Netlify
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Source Code</ProjectBadge>
+					<ProjectBadge>{w.sourcecode}</ProjectBadge>
 					<a href="https://github.com/christianwaldmann/geometrierechner">
 						<StyledLink>Github Repository</StyledLink>
 					</a>

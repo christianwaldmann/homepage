@@ -10,24 +10,31 @@ import {
 
 import thumbImage1 from "../../public/images/musicplayer.png";
 
+import { getLanguage } from "../../hooks/getLanguage";
+import { en } from "../../locales/en/musicplayer";
+import { de } from "../../locales/de/musicplayer";
+import { enw } from "../../locales/en/words";
+import { dew } from "../../locales/de/words";
+
 export default function Project() {
+	const t = getLanguage() === "en" ? en : de;
+	const w = getLanguage() === "en" ? enw : dew;
+
 	return (
 		<Layout>
-			<Title>Music Player</Title>
-			<Paragraph>
-				A music player for Windows with basic functionality.
-			</Paragraph>
+			<Title>{t.title}</Title>
+			<Paragraph>{t.description}</Paragraph>
 			<ProjectList>
 				<ProjectListItem>
-					<ProjectBadge>Languages</ProjectBadge>
+					<ProjectBadge>{w.languages}</ProjectBadge>
 					C++
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Frameworks</ProjectBadge>
+					<ProjectBadge>{w.frameworks}</ProjectBadge>
 					Qt
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Tools</ProjectBadge>
+					<ProjectBadge>{w.tools}</ProjectBadge>
 					Git, Premake
 				</ProjectListItem>
 			</ProjectList>

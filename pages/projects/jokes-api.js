@@ -11,23 +11,23 @@ import StyledLink from "../../components/styled-link";
 
 import thumbImage1 from "../../public/images/jokes_api.png";
 
+import { getLanguage } from "../../hooks/getLanguage";
+import { en } from "../../locales/en/jokes-api";
+import { de } from "../../locales/de/jokes-api";
+import { enw } from "../../locales/en/words";
+import { dew } from "../../locales/de/words";
+
 export default function Project() {
+	const t = getLanguage() === "en" ? en : de;
+	const w = getLanguage() === "en" ? enw : dew;
+
 	return (
 		<Layout>
-			<Title>Jokes API</Title>
-			<Paragraph>
-				API for Chuck Norris facts/jokes. It is a API proxy for{" "}
-				<a href="https://api.chucknorris.io/">
-					<StyledLink>api.chucknorris.io</StyledLink>
-				</a>
-				. The original API is supplemented by a new (fake) attribute
-				author. This information is stored persistent. The first time a
-				joke is fetched, it gets assigned a random author, which is then
-				saved in a PostgreSQL database.
-			</Paragraph>
+			<Title>{t.title}</Title>
+			<Paragraph>{t.description}</Paragraph>
 			<ProjectList>
 				<ProjectListItem>
-					<ProjectBadge>Website</ProjectBadge>
+					<ProjectBadge>{w.website}</ProjectBadge>
 					<a href="https://jokes-api100.herokuapp.com/">
 						<StyledLink>
 							https://jokes-api100.herokuapp.com/
@@ -35,19 +35,19 @@ export default function Project() {
 					</a>
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Languages</ProjectBadge>
+					<ProjectBadge>{w.languages}</ProjectBadge>
 					Python
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Frameworks</ProjectBadge>
+					<ProjectBadge>{w.frameworks}</ProjectBadge>
 					Flask
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Tools</ProjectBadge>
+					<ProjectBadge>{w.tools}</ProjectBadge>
 					Git, Docker, Travis CI, Heroku, PostgreSQL
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Source Code</ProjectBadge>
+					<ProjectBadge>{w.sourcecode}</ProjectBadge>
 					<a href="https://github.com/christianwaldmann/jokes_api">
 						<StyledLink>Github Repository</StyledLink>
 					</a>

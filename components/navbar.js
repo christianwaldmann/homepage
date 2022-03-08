@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ThemeToggleButton from "./theme-toggle-button";
+import LanguageDropdown from "./language-dropdown";
 
 export default function Navbar() {
 	return (
@@ -10,7 +11,8 @@ export default function Navbar() {
 						Christian Waldmann
 					</a>
 				</Link>
-				<ThemeToggleButton className="ml-auto" />
+				<LanguageDropdown className="ml-auto mr-4" />
+				<ThemeToggleButton />
 			</div>
 		</div>
 	);
