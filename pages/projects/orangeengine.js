@@ -11,37 +11,35 @@ import StyledLink from "../../components/styled-link";
 
 import thumbImage1 from "../../public/images/orangeengine.png";
 
+import { getLanguage } from "../../hooks/getLanguage";
+import { en } from "../../locales/en/orangeengine";
+import { de } from "../../locales/de/orangeengine";
+import { enw } from "../../locales/en/words";
+import { dew } from "../../locales/de/words";
+
 export default function Project() {
+	const t = getLanguage() === "en" ? en : de;
+	const w = getLanguage() === "en" ? enw : dew;
+
 	return (
 		<Layout>
-			<Title>Orange Engine</Title>
-			<Paragraph>
-				Orange Engine is a game / rendering engine. This project is not
-				implemented on my own. Rather it's my code following along the{" "}
-				<a href="https://www.youtube.com/playlist?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT">
-					<StyledLink>tutorial series</StyledLink>
-				</a>{" "}
-				of the{" "}
-				<a href="https://github.com/TheCherno/Hazel">
-					<StyledLink>Hazel Engine</StyledLink>
-				</a>
-				.
-			</Paragraph>
+			<Title>{t.title}</Title>
+			<Paragraph>{t.description}</Paragraph>
 			<ProjectList>
 				<ProjectListItem>
-					<ProjectBadge>Languages</ProjectBadge>
+					<ProjectBadge>{w.languages}</ProjectBadge>
 					C++
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Frameworks</ProjectBadge>
+					<ProjectBadge>{w.frameworks}</ProjectBadge>
 					OpenGL, Dear ImGui, Entt
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Tools</ProjectBadge>
+					<ProjectBadge>{w.tools}</ProjectBadge>
 					Git, Premake
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Source Code</ProjectBadge>
+					<ProjectBadge>{w.sourcecode}</ProjectBadge>
 					<a href="https://github.com/christianwaldmann/Orange">
 						<StyledLink>Github Repository</StyledLink>
 					</a>

@@ -11,32 +11,35 @@ import StyledLink from "../../components/styled-link";
 
 import thumbImage1 from "../../public/images/optimizer_visualization.png";
 
+import { getLanguage } from "../../hooks/getLanguage";
+import { en } from "../../locales/en/optimizer-visualization";
+import { de } from "../../locales/de/optimizer-visualization";
+import { enw } from "../../locales/en/words";
+import { dew } from "../../locales/de/words";
+
 export default function Project() {
+	const t = getLanguage() === "en" ? en : de;
+	const w = getLanguage() === "en" ? enw : dew;
+
 	return (
 		<Layout>
-			<Title>Optimizer Visualization</Title>
-			<Paragraph>
-				This simulation visualizes gradient descent methods in different
-				situations. The main motivation behind that is to better
-				understand optimizers which are being used by deep learning
-				frameworks. The following optimizers are implemented: SGD, SGD
-				Momentum, Nesterov Momentum, AdaGrad, RMSProp, Adam
-			</Paragraph>
+			<Title>{t.title}</Title>
+			<Paragraph>{t.description}</Paragraph>
 			<ProjectList>
 				<ProjectListItem>
-					<ProjectBadge>Languages</ProjectBadge>
+					<ProjectBadge>{w.languages}</ProjectBadge>
 					Python
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Libraries</ProjectBadge>
+					<ProjectBadge>{w.libraries}</ProjectBadge>
 					Numpy, Matplotlib
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Tools</ProjectBadge>
+					<ProjectBadge>{w.tools}</ProjectBadge>
 					Git
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Source Code</ProjectBadge>
+					<ProjectBadge>{w.sourcecode}</ProjectBadge>
 					<a href="https://github.com/christianwaldmann/optimizer-visualization">
 						<StyledLink>Github Repository</StyledLink>
 					</a>

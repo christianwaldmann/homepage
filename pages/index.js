@@ -8,7 +8,13 @@ import Button, { GhostButton } from "../components/button";
 import Link from "next/link";
 import ChevronRight from "../components/icons/chevron-right";
 
+import { getLanguage } from "../hooks/getLanguage";
+import { en } from "../locales/en/index";
+import { de } from "../locales/de/index";
+
 export default function Home() {
+	const t = getLanguage() === "en" ? en : de;
+
 	return (
 		<Layout>
 			<Head>
@@ -18,14 +24,8 @@ export default function Home() {
 
 			<main className="flex flex-col w-full">
 				<Section delay={0.1}>
-					<Section.Header>About</Section.Header>
-					<Paragraph>
-						I'm Christian, a student doing a masters degree in
-						computer science. I graduated with a B.Eng. in
-						mechanical engineering before making the decision to
-						switch to computer science. On this website I display
-						some of the projects I make in my free time.
-					</Paragraph>
+					<Section.Header>{t.about}</Section.Header>
+					<Paragraph>{t.aboutText}</Paragraph>
 					<div className="flex justify-center mt-6">
 						<Link href="/projects">
 							<a>
@@ -35,38 +35,21 @@ export default function Home() {
 									}
 									skipTabFocus
 								>
-									My Portfolio
+									{t.portfolioButton}
 								</Button>
 							</a>
 						</Link>
 					</div>
 				</Section>
 				<Section delay={0.2}>
-					<Section.Header>Bio</Section.Header>
+					<Section.Header>{t.bio}</Section.Header>
 					<Bio>
-						<Bio.Row>
-							<Bio.Date>Since 2021</Bio.Date>
-							<Bio.Text>
-								Started the master's program in computer science
-								at University of Applied Sciences Kempten
-							</Bio.Text>
-						</Bio.Row>
-						<Bio.Row>
-							<Bio.Date>2016 - 2020</Bio.Date>
-							<Bio.Text>
-								Graduated with a B.Eng. in mechanical
-								engineering at University of Applied Sciences
-								Kempten
-							</Bio.Text>
-						</Bio.Row>
-						<Bio.Row>
-							<Bio.Date>2008 - 2016</Bio.Date>
-							<Bio.Text>Completed high school (Abitur)</Bio.Text>
-						</Bio.Row>
-						<Bio.Row>
-							<Bio.Date>1997</Bio.Date>
-							<Bio.Text>Born</Bio.Text>
-						</Bio.Row>
+						{t.bioEntries.map((item, index) => (
+							<Bio.Row key={index}>
+								<Bio.Date>{item.date}</Bio.Date>
+								<Bio.Text>{item.text}</Bio.Text>
+							</Bio.Row>
+						))}
 					</Bio>
 				</Section>
 				<Section delay={0.3}>

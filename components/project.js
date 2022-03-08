@@ -3,13 +3,16 @@ import ChevronRight from "./icons/chevron-right";
 import StyledLink from "./styled-link";
 import Image from "next/image";
 import Badge from "./badge";
+import { getLanguage } from "../hooks/getLanguage";
 
 export function Title({ children }) {
 	return (
 		<div className="flex items-end mb-4">
 			<Link href="/projects">
 				<a>
-					<StyledLink>Projects</StyledLink>
+					<StyledLink>
+						{getLanguage() === "en" ? "Projects" : "Projekte"}
+					</StyledLink>
 				</a>
 			</Link>
 			<ChevronRight className="w-4 h-4 mx-1 mb-0.5" />

@@ -11,22 +11,23 @@ import StyledLink from "../../components/styled-link";
 
 import thumbImage1 from "../../public/images/bookmarks.png";
 
+import { getLanguage } from "../../hooks/getLanguage";
+import { en } from "../../locales/en/bookmarks";
+import { de } from "../../locales/de/bookmarks";
+import { enw } from "../../locales/en/words";
+import { dew } from "../../locales/de/words";
+
 export default function Project() {
+	const t = getLanguage() === "en" ? en : de;
+	const w = getLanguage() === "en" ? enw : dew;
+
 	return (
 		<Layout>
-			<Title>Bookmarks</Title>
-			<Paragraph>
-				Bookmarks is a website that helps you organize your bookmarks.
-				This is especially useful if you set this website as the default
-				site to open for new tabs in your browser. The application is
-				split into a separate frontend and backend. The frontend is
-				written in React, the backend with Django REST framework. User
-				authentication is implemented. Both systems are deployed on a
-				VPS with Nginx acting as a reverse proxy.
-			</Paragraph>
+			<Title>{t.title}</Title>
+			<Paragraph>{t.description}</Paragraph>
 			<ProjectList>
 				<ProjectListItem>
-					<ProjectBadge>Website</ProjectBadge>
+					<ProjectBadge>{w.website}</ProjectBadge>
 					<a href="https://bookmarks.christianw.de/">
 						<StyledLink>
 							https://bookmarks.christianw.de/
@@ -34,15 +35,15 @@ export default function Project() {
 					</a>
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Languages</ProjectBadge>
+					<ProjectBadge>{w.languages}</ProjectBadge>
 					HTML, CSS, Javascript, Python
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Frameworks</ProjectBadge>
+					<ProjectBadge>{w.frameworks}</ProjectBadge>
 					React, TailwindCSS, Django REST Framework
 				</ProjectListItem>
 				<ProjectListItem>
-					<ProjectBadge>Tools</ProjectBadge>
+					<ProjectBadge>{w.tools}</ProjectBadge>
 					Git, Nginx, VPS
 				</ProjectListItem>
 			</ProjectList>
