@@ -31,9 +31,9 @@ export default function Project() {
 			<ProjectList>
 				<ProjectListItem>
 					<ProjectBadge>{w.website}</ProjectBadge>
-					<a href="https://www.geometrierechner.de/">
+					<a href="https://geometrierechner.christianw.de/">
 						<StyledLink>
-							https://www.geometrierechner.de/
+						https://geometrierechner.christianw.de/
 						</StyledLink>
 					</a>
 				</ProjectListItem>
