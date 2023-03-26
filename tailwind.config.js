@@ -18,11 +18,10 @@ module.exports = {
 			red: colors.rose,
 			yellow: colors.amber,
 			teal: colors.teal,
-			beige: "hsl(34, 31%, 90%)",
-			beigeLight: "hsl(34, 31%, 95%)",
 			blue: colors.blue,
 			pink: colors.pink,
 			green: colors.green,
+			sky: colors.sky,
 		},
 		extend: {
 			width: {
