@@ -58,7 +58,7 @@ export default function LanguageDropdown({ ...restProps }) {
 
 LanguageDropdown.Modal = function Modal({ handleOnSelect }) {
 	return (
-		<div className="absolute right-0 flex flex-col p-2 rounded bg-beigeLight dark:bg-gray-900 w-36 top-12 gap-y-2">
+		<div className="absolute right-0 flex flex-col p-2 bg-gray-100 rounded dark:bg-gray-900 w-36 top-12 gap-y-2">
 			<LanguageDropdown.Button
 				language="de"
 				handleOnSelect={handleOnSelect}
@@ -82,7 +82,7 @@ LanguageDropdown.Button = function Button({
 }) {
 	return (
 		<button
-			className="px-3 py-2 text-left rounded dark:hover:bg-gray-800 hover:bg-beige"
+			className="px-3 py-2 text-left rounded dark:hover:bg-gray-800 hover:bg-white"
 			onClick={() => handleOnSelect(language)}
 		>
 			<span className="mr-2">{language.toUpperCase()}</span>

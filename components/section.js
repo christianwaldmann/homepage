@@ -6,7 +6,7 @@ export default function Section({ children, delay = 0 }) {
 			className="mt-6"
 			initial={{ y: 10, opacity: 0 }}
 			animate={{ y: 0, opacity: 1 }}
-			transition={{ duration: 0.8, delay }}
+			transition={{ duration: 0.4, delay }}
 		>
 			{children}
 		</motion.div>
