@@ -1,17 +1,17 @@
 export const en = {
 	about: "About",
 	aboutText:
-		"I'm Christian, a student doing a masters degree in computer science. I graduated with a B.Eng. in mechanical engineering before making the decision to switch to computer science. On this website I display some of the projects I make in my free time.",
+		"I'm Christian, a recent graduate in the field of computer science. On this website I display some of the projects I make in my free time.",
 	portfolioButton: "My Projects",
 	bio: "Bio",
 	bioEntries: [
 		{
-			date: "Since 2021",
-			text: "Started the master's program in computer science at University of Applied Sciences Kempten",
+			date: "2021 - 2023",
+			text: "Graduated with a M.Sc. in Computer Science at Kempten University of Applied Sciences",
 		},
 		{
-			date: "2016 - 2020",
-			text: "Graduated with a B.Eng. in mechanical engineering at University of Applied Sciences Kempten",
+			date: "2016 - 2021",
+			text: "Graduated with a B.Eng. in Mechanical Engineering at Kempten University of Applied Sciences",
 		},
 		{
 			date: "2008 - 2016",
@@ -22,5 +22,5 @@ export const en = {
 			text: "Born",
 		},
 	],
-	links: "Links"
+	links: "Links",
 };
