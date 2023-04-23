@@ -1,7 +1,5 @@
 export const de = {
 	projects: "Projekte",
-	jokesTitle: "Jokes API",
-	jokesDescription: "Proxy für bestehende API",
 	autocompleteTitle: "Autocomplete mit PostgreSQL",
 	autocompleteDescription: "Autovervollständigung im Storage",
 	optimizerTitle: "Optimierer Visualisierung",

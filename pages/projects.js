@@ -6,7 +6,6 @@ import thumbGeometrierechner from "../public/images/geometrierechner_thumbnail.p
 import thumbBookmarks from "../public/images/bookmarks_thumbnail.png";
 import thumbOrangeEngine from "../public/images/orangeengine_thumbnail.png";
 import thumbMusicPlayer from "../public/images/musicplayer_thumbnail.png";
-import thumbJokesAPI from "../public/images/jokes_api_thumbnail.png";
 import thumbAutocompletePostgres from "../public/images/autocomplete_postgres_thumbnail.png";
 import thumbOptimizerVisualization from "../public/images/optimizer_visualization_thumbnail.png";
 
@@ -18,12 +17,6 @@ export default function Projects() {
 	const t = getLanguage() === "en" ? en : de;
 
 	const projectList = [
-		{
-			id: "jokes-api",
-			title: t.jokesTitle,
-			description: t.jokesDescription,
-			thumbnail: thumbJokesAPI,
-		},
 		{
 			id: "autocomplete-postgres",
 			title: t.autocompleteTitle,
