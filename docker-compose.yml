@@ -4,5 +4,8 @@ services:
     frontend:
         build:
             context: .
+        environment:
+            - HOMEPAGE_UMAMI_TRACKING_LINK=umami_tracking_link_placeholder2
+            - HOMEPAGE_UMAMI_TRACKING_CODE=umami_tracking_code_placeholder2
         ports:
             - "3000:3000"
