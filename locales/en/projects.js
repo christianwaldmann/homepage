@@ -12,5 +12,5 @@ export const en = {
 	orangeengineTitle: "Orange Engine",
 	orangeengineDescription: "game / rendering engine",
 	musicplayerTitle: "Music Player",
-	musicplayerDescription: "simpe music player",
+	musicplayerDescription: "simple music player",
 };
